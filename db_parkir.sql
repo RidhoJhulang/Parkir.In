@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2021 at 08:21 AM
+-- Generation Time: Apr 15, 2021 at 09:08 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.32
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sistem_parkir`
+-- Database: `db_parkir`
 --
 
 -- --------------------------------------------------------
@@ -58,11 +58,11 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(10, '2014_10_12_000000_create_users_table', 1),
-(11, '2014_10_12_100000_create_password_resets_table', 1),
-(12, '2018_06_19_081552_create_parkir_masuk_table', 1),
-(13, '2018_06_19_120219_create_tarif', 1),
-(14, '2018_06_24_064828_stok__parkir', 2);
+(10, '2021_04_14_000000_create_users_table', 1),
+(11, '2021_04_14_100000_create_password_resets_table', 1),
+(12, '2021_04_14_081552_create_parkir_masuk_table', 1),
+(13, '2021_04_14_120219_create_tarif', 1),
+(14, '2021_04_14_064828_stok__parkir', 2);
 
 -- --------------------------------------------------------
 
@@ -131,7 +131,8 @@ INSERT INTO `parkir_masuk` (`id`, `code`, `plat_nomor`, `jenis_kendaraan`, `jam_
 (22, 'PKR-0414996', 'B7384HJ', 'Mobil', '22:06:54', '2021-04-14'),
 (23, 'PKR-0414250', 'B7282HH', 'Motor', '23:17:34', '2021-04-14'),
 (24, 'PKR-0414979', 'H8293GH', 'Mobil', '23:35:40', '2021-04-14'),
-(25, 'PKR-0414575', 'L7364JJ', 'Motor', '23:36:12', '2021-04-14');
+(25, 'PKR-0414575', 'L7364JJ', 'Motor', '23:36:12', '2021-04-14'),
+(26, 'PKR-0415286', 'L892TRR', 'Mobil', '14:07:04', '2021-04-15');
 
 --
 -- Triggers `parkir_masuk`
@@ -174,7 +175,7 @@ CREATE TABLE `stok_parkir` (
 --
 
 INSERT INTO `stok_parkir` (`id`, `stok`, `jenis_kendaraan`) VALUES
-(1, 30, 'Mobil'),
+(1, 29, 'Mobil'),
 (2, 49, 'Motor');
 
 -- --------------------------------------------------------
@@ -220,8 +221,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama_user`, `no_telp`, `email`, `password`, `level`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Jhulang', '02888319', 'jhulang@gmail.com', '$2y$10$HkquboLDS5.WTaXgKS7nf.C2pn8CcWMjskTYmWlLW0p78reu1ZuYG', 'Admin', 'onnPGgnXVPi1yASxKF9WOAjjwkomXHJPdD0vviErAnsiAiIcW1m74yzXmLcH', '2021-04-13 20:10:04', '2021-04-13 20:10:04'),
-(2, 'TRIAL', '08193837434', 'trial@trial.trial', '$2y$10$GreA17TZq96pojsKUWAmdepesuSQgPu866Dy3xSuQTlb9/zliibJq', 'User', 'BP9tirATfQLDcBoxC5zyesDq9KcyBjq8cvz1Y2tnK0A6R3RSpmslFrkSXLoX', '2021-04-13 07:00:36', '2021-04-13 07:00:36');
+(1, 'Jhulang', '02888319', 'jhulang@gmail.com', '$2y$10$HkquboLDS5.WTaXgKS7nf.C2pn8CcWMjskTYmWlLW0p78reu1ZuYG', 'Admin', 'hnjzs0KB8yC63BGhsGsoJczWnNEykMQDx6CA3lcGqnLLzlK0cW81umJSCzU0', '2021-04-13 20:10:04', '2021-04-13 20:10:04'),
+(2, 'TRIAL', '08193837434', 'trial@trial.trial', '$2y$10$GreA17TZq96pojsKUWAmdepesuSQgPu866Dy3xSuQTlb9/zliibJq', 'User', 'yYOq6GCXGgBF5W0jdrHGgf1FOlUpmhhBFcvG8Vej5EPzvwfp4eel2m0a4ppG', '2021-04-13 07:00:36', '2021-04-13 07:00:36');
 
 -- --------------------------------------------------------
 
@@ -325,7 +326,7 @@ ALTER TABLE `parkir_keluar`
 -- AUTO_INCREMENT for table `parkir_masuk`
 --
 ALTER TABLE `parkir_masuk`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `stok_parkir`
