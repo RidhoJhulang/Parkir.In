@@ -138,7 +138,7 @@ class ControllerParkir extends Controller
     public function destroy($id)
     {
         $id = Parkir::destroy($id);
-        return redirect('/transaksi /DataParkiranMasuk')->with('message','Data Parkir Berhasil Di Hapus');
+        return redirect('/transaksi/DataParkiranMasuk')->with('message','Data Parkir Berhasil Di Hapus');
     }
 
     public function search(Request $request){
@@ -147,6 +147,15 @@ class ControllerParkir extends Controller
         $hasil = Parkir::where('plat_nomor','Like','%'.$id.'%')->paginate(5);
 
         return view('layouts.result_cari',['data'=>$hasil]);
+    }
+
+    public function code(Request $request){
+        $code = $request->code;
+
+        $hasil = Parkir::where('code','Like','%'.$code.'%')->first();
+        $id = $hasil->id ?? null; 
+
+        return redirect()->to('/transaksi/ParkirSelesai/'.$id);
     }
 
     public function selesai($id){
@@ -254,7 +263,10 @@ class ControllerParkir extends Controller
        $pendapatan = DB::table('laporan_parkiran')->where('tgl_keluar','=',$date)->sum('total');
 
        $no = 1;
-       $data = DB::table('parkir_keluar')->paginate(5);
+       $data = DB::table('parkir_keluar')
+              ->orderBy('tgl_keluar','desc')
+              ->orderBy('jam_keluar','desc')
+              ->paginate(5);
         return view('home',['pendapatan'=>$pendapatan,'mobil'=>$mobil,'motor'=>$motor,'r_mobil'=>$ruang_mobil,'r_motor'=>$ruang_motor],['data'=>$data, 'no'=>$no]);
     }
     

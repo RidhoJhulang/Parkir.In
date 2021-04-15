@@ -16,6 +16,7 @@
 <div class="row">
 	<div class="col-md-5 offset-md-4">
 		<br><br>
+		<a class="btn btn-primary" href="/transaksi/kendaraan_masuk" role="button" style="margin-top:3%">Back</a>
 		<a href="" class="btn btn-success" onclick="window.print()" id="print" style="margin-top:3%">Print <span class="fa fa-print"></span></a>
 		<div class="card card-default" style="margin-top:3%;height:355px">
 			<div class="card-header">

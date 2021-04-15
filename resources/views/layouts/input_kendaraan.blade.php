@@ -98,16 +98,16 @@
 			  </div>
 		  <div class="col-md-12 panel-body" style="padding-bottom:25px;">
 			<div class="col-md-12">
-			  <form class="cmxform" action="/transaksi/StoreInput" method="post">
+			  <form class="cmxform" action="/transaksi/Show/" method="GET">
 				  <div class="col-md-12">
 					  <div class="form-group form-animate-text" style="margin-top:15px !important;">
-						  <input type="text" name="no_polisi" value="" placeholder="Masukan Kode" class="form-control{{ $errors->has('no_polisi') ? ' is-invalid' : '' }}">
+						  <input type="text" id="code" name="code" value="" placeholder="Masukan Kode" class="form-control{{ $errors->has('code') ? ' is-invalid' : '' }}">
 					  </div>
 				  </div>
 				<br>
 		  {{ csrf_field() }}
 		  <div class="col-md-12">
-			  <a href="/transaksi/ParkirSelesai/22" class="btn btn-outline-primary btn-block">Go</a>
+			<button type="submit" class="btn btn-outline-primary btn-block" name="go">Go</button>
 		  </div>
 			</form>
 		  </div>
@@ -157,7 +157,7 @@
 					<td>
 						<div class="btn-group" style="margin-left:17%">
 						<a href="/transaksi/editDataParkiranMasuk/{{ $datas->id }}" class="btn btn-success"><span class="fa fa-pencil"></span></a>
-						<a href="/transaksi/ParkirSelesai/{{ $datas->id }}" class="btn btn-primary">Selesai</a>
+						{{-- <a href="/transaksi/ParkirSelesai/{{ $datas->id }}" class="btn btn-primary">Selesai</a> --}}
 						<a href="/transaksi/struk/{{ $datas->id }}" class="btn btn-dark">Struk</a>
 						</div>
 					</td>

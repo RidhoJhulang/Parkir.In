@@ -103,7 +103,8 @@
 					</div>
 				</div>
 				{{ csrf_field() }}
-				<button type="submit" class="btn btn-primary" id="selesai">Selesai</button>
+				<a class="btn btn-primary" href="/transaksi/kendaraan_masuk" role="button">Back</a>
+				<button type="submit" class="btn btn-success" id="selesai">Selesai</button>
 			</div>
 		</div>
 	</div>

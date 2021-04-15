@@ -38,6 +38,7 @@ Route::group(['prefix' => 'transaksi','middleware' =>['User','auth']],function()
 	Route::get('/struk/{id}','ControllerParkir@show');
 
 	Route::get('/ParkirSelesai/{id}','ControllerParkir@selesai');
+	Route::get('/Show','ControllerParkir@code');
 	Route::post('/StoreSelesai','ControllerParkir@storeSelesai');
 
 	Route::get('/DataParkiranKeluar','ControllerParkir@showKeluar');
